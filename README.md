@@ -1,2 +1,2 @@
 # COS_524
-Princeton course repository
+Princeton course assignments repository
