@@ -1,0 +1,92 @@
+It is a group assignment. You can work with a partner, or work by yourself.
+
+You should sign up for groups here if you work with a partner. Both of the members should choose the same group number to join. No need to sign up for groups if you work alone for this assignment.
+
+ 
+
+Homework 1 Instructions:
+
+Background
+Summer 2020 saw the rise of support for #BlackLivesMatter and social justice movements after the murder of George Floyd. While in-person protests supporting the #BLM movement were held during the coronavirus epidemic in every major US city, social media sites — including Twitter — were also awash with opinions about the movement. When Twitter users read tweets about the #BLM movement, and the contemporaneous #BlueLivesMatter movement in support of policing efforts, they might be interested in categorizing tweets based on their attitudes toward the #BLM and #BlueLivesMatter movements.
+
+In this assignment, you will build a classifier that takes as input a training data set of tweets with labels on those tweets – positive, negative, or neutral toward the #BlackLivesMatter movement – and output labels for new, unseen tweets. You will apply that classifier to predict the labels for a test set of tweets, also with labels. Moreover, you will compare different classifiers and feature sets in their classification accuracy (and other metrics) on the test set.
+
+
+The objective of this assignment is closely related to sentiment analysis, or the classification of text snippets by the author's sentiment. Here, we focus on positive and negative opinions of a social movement. This type of dataset and classification algorithm can help to understand public opinion (or at least the public active on Twitter) on social movements and the breadth of social movements. Sentiment analysis has been used in Facebook and Twitter feeds to characterize social media posts and understand the propagation of sentiments among social networks. Facebook famously published a paper describing the manipulation of users’ sentiments by filtering and ordering their feeds using posts of specific sentiment types. A number of technical difficulties in this domain exist, including these tweets being often very short, using vocabulary that is not available in standard English dictionaries, using non-standard negation patterns in sentences, and using irony or sarcasm. Beyond the technical difficulties, it is essential to point out that there are numerous ethical challenges with the development of such a technology, especially given the difficulty of the objective and uncertainty in the data labels.
+
+      Important note 1: If you choose to opt-out of this homework assignment for personal reasons or political views, we fully respect that. The #BLM tweets – both positive and negative – are often very difficult to read. We have done our best to remove graphic and possibly offensive tweets, but we cannot ensure complete safety. Moreover, the only required interaction with the data is through the classifiers, when examining which features are most predictive of the labels. The Alternative Homework 1 assignment will be the design of a sentiment analysis classifier on Amazon and Netflix reviews, and is available on the Canvas website. (in the "HW1ReviewFiles" folder in the "Files" section of Canvas). You will not be marked down for opting out.
+      Important note 2: If you would like to participate in the labeling of additional data, we will have a space to do that once we receive IRB approval. Participating will provide you with a valuable opportunity to examine which features of a tweet might be useful for producing your own labels (and which are not useful). Additionally, your labels would contribute to the creation of a larger dataset for broad research regarding people's attitudes toward both the #BlackLivesMatter and #BlueLivesMatter movements. With that being said, participation in labeling is entirely optional. We will not know whether you participated or not, and refusing to participate will not affect your grade whatsoever. However, it is incredibly valuable to the larger community to have these labels.
+
+Project definition
+Your goal in this homework project is to use a data set consisting of 8435 tweets to build an opinion classifier, or a method that classifies a tweet as positive or negative with respect to the #BlackLivesMatter movement. We have supplied you with the training(6747 tweets) and test (1688) tweet data sets on the Canvas website. We have also provided a Python notebook to identify a simple dictionary of words from each tweet, creating, for each tweet, a bag-of-words representation using the dictionary words. Your first step in the process is to download the script and the data and run the script on the training data to build a vocabulary and create a bag-of-words feature representation for each review; see the HW1ReadMe.md file for the description of the dataset and the script for the preprocessing process(All files are in the "HW1Files" folder in the "Files" section of Canvas). Feel free to extend the feature set in interesting and well-motivated ways (see Extensions, below).
+
+
+At this point you should pause and look at the training data (but not the test data). In your homework write up, you should include two paragraphs on your expectations and assumptions about which classifiers will perform best and which will perform worst on these data, and why based on what you have learned about classifiers. You should also include desirable behavior with respect to performance – is it better to mistake a supportive tweet for an oppositional tweet, or vice versa? do you expect the classes will be linearly separable? is a generative or discriminative classifier likely to perform better on this problem? – and write down your predictions for both features (hashtags? 3-mers?) that will be valuable in classification and also one or two
+classifiers that you expect to perform best. You will not be graded on your correctness here, but instead on your thought process.
+
+
+Then, you should build and train those classifiers that you mentioned that take in the feature sets and the test data and fit a classifier. Feel free to use the classifiers we have or will discuss in lecture as well as others mentioned in our text books, described in the scientific literature, or implemented in software. You may also use more sophisticated classifiers (see Extensions) specifically built for the problem of sentiment analysis in Twitter. Because of the large number of possible features, we recommend using some type of feature selection to reduce the number of features. Finally, you should evaluate the classifiers you apply to this problem according to (at a minimum) the Receiver Operating Characteristic (ROC) curves on the test data set, which consists of 1688 held out tweets with labels.
+
+
+Essential to any data analysis task is the interpretation of the results. What features were most important for classification, and what do these features tell us about the problem? What types of tweets were easy to classify for all approaches, and on what types of tweets did the approaches disagree? Simply building a machine learning approach to solve the problem does not constitute a data analysis; recovering and characterizing signal from these results does, viewed through the lens of the methodological assumptions.
+
+ 
+
+Deliverables
+Your deliverables for this project include:
+• A five page (not including citations) summary of the project work, which should contain
+(as described in the Example project write up on Canvas):
+– A title, authors’ names, and abstract for the project;
+– an introduction to the problem being addressed;
+– a description of desirable behavior for a classifier and a prediction of how methods
+and specific features will compare on this task;
+– a description of the data;
+– a clear description of the methods used, and how they were fitted using training data;
+– a one page description of one of the classifiers, starting from first principles and
+ending with how the method was fit to the data;
+– a presentation of the results of the methods applied to the test data;
+– a discussion of the results, including specific examples of reviews and features that
+highlight the behavior of the classification models;
+– a short summary and conclusion, including extensions that you believe would be
+particularly valuable based on the results;
+– a complete bibliography to support the databases, feature selection, classifiers, code
+bases, and related work that are relevant to your project.
+• A .zip file of your Python code or Jupyter notebook that you developed for the project, with
+a README about how you ran the code.
+
+You should submit 2 files for this assignment on Canvas:
+
+    1) your PDF write up of the project. Please name your pdf file as <author1NetID>_<author2NetID>_hw1.pdf. e.g. the file name should be bee_xiaoyan.pdf if Xiaoyan and Barbara are working together for this assignment!)
+
+    2) the Python code for the project, and a README about how to run the code. Please name your zip file as <author1NetID>_<author2NetID>_hw1.zip
+
+We strongly recommend writing as you go in the project, which means starting to write the project report as you are downloading and analyzing the data. That said, you should avoid speculative writing, and only write about results once you have them in hand.
+
+Extensions
+If you would like to extend this assignment to more interesting ground after first completing the basic deliverables for the project, you might consider , but not limited to, the following:
+    • More interesting features: while we have only asked you to work with a simple word dictionary,
+       there are many extensions to this to consider, including features involving:
+        – bigrams, punctuation, proper nouns, negations, capitalizations, emoji, hashtags, dates
+        – tweet text length and distribution of length
+        – analysis of attachments, such as URLs, gifs, and images.
+    • More complex classifiers: there are a number of exciting classifiers that might be used for this task,        including, e.g., supervised topic models [Zhu et al., 2009, Mcauliffe and Blei,
+2008], conditional tensor factorization[Yang and Dunson, 2013] , or something of your own design that might identify latent structure in the data that is predictive of sentiment. Ensemble classifiers that combine sentiment classifications from a number of classifiers to improve results may be built from a number of the more simple classifiers used in your basic analyses.
+    • Effectively including neutral/neither tweets: How can you include tweets with neither labels?
+    • Better evaluation metrics: what are better metrics that you might use to evaluate these classifiers? How can classification uncertainty be considered in these metrics? Can you improve model evaluation using cross validation instead of our simple training and test sets?
+    • Additional types of problems: What about tweets that do not have labels? You might consider developing an active learning method that will ask users to classify reviews as support/oppose that will, in expectation, reduce uncertainty maximally across all unlabeled reviews. You also might try to develop adaptive sentiment classifiers that can be refitted as new types of sentiments, tweets, hashtags, or vocabulary words arise? You might consider the date of the tweet and look at the change in the predictive power of some features over time.
+
+
+Resources
+There is a large literature on sentiment classifiers. Many involve fairly simple classification methods and large numbers of features or reference data sets. There are also a number of reviews available. Review some of this literature to get ideas on ways to create a great classifier.
+
+References
+
+Jon D Mcauliffe and David M Blei. Supervised topic models (Links to an external site.). In Advances in neural information
+processing systems, pages 121–128, 2008.
+
+Yun Yang and David B Dunson. Bayesian conditional tensor factorizations for high-dimensional (Links to an external site.)
+classification (Links to an external site.). arXiv preprint arXiv:1301.4950, 2013.
+
+Jun Zhu, Amr Ahmed, and Eric P Xing. Medlda: maximum margin supervised topic models for (Links to an external site.)
+regression and classification. (Links to an external site.) In Proceedings of the 26th Annual International Conference on
+Machine Learning, pages 1257–1264. ACM, 2009.
