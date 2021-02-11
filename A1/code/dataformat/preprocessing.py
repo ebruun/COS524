@@ -1,5 +1,4 @@
-#This class is based on code provided in the assignment 
-
+#This class is based on code provided by TAs in the assignment 
 
 import regex as re
 import nltk
@@ -14,7 +13,7 @@ from nltk.stem import WordNetLemmatizer
 class Preprocessor():
 
 	def __init__(self):
-		print("Made a Preprocessor object")
+		print("PREPROCESSOR OBJECT CREATED")
 
 		self.stop_words = set(stopwords.words('english')) - {'all'}
 	
@@ -22,18 +21,21 @@ class Preprocessor():
 	# Preprocesses the text of the Tweets in the df and returns the df
 	# By default, this removes the Tweets with the "neither" label
 	def preprocess_df(self,df, remove_neither=True):
+		print("--preprocessing data...")
 		idx = "text"
 		length = len(df[idx])
 
-		for ii in range(length):
+		for ii in range(5):
 			tweet = str(df[idx][ii])
 			df.loc[ii, idx] = self.preprocess_text(tweet)
 
 		if (remove_neither):
-			return df[df['BLM'] != "neither"]
+			new_df = df[df.BLM != 'neither']
+			return new_df
 		else:
 			return df
 
+		
 	# Preprocesses the tweets text
 	# This function is based on code from:
 	# https://www.pluralsight.com/guides/building-a-twitter-sentiment-analysis-in-python
