@@ -1,7 +1,15 @@
-from classifiers.classifier_class import Classifier
+
+#Local Imports
+from model.classifier_class import Classifier
+from dataformat.data_class import Data
 
 
-a = Classifier("multinomial_bayes")
+train_data = Data("data","train", reload = False)
+#test_data = Data("data","test", reload = False)
 
-print(a)
+
+
+#a = Classifier("multinomial_bayes")
+
+#print(a)
 
